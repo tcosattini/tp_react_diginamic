@@ -1,0 +1,17 @@
+version: latest
+
+services:
+  la_fromagerie_com_db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=la_fromagerie_com
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - '3306:3306'
+    volumes:
+      - la_fromagerie_com_data:/var/lib/mysql
+
+
+volumes:
+  la_fromagerie_com_data:
+    driver: local

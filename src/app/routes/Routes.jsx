@@ -1,3 +1,14 @@
-const { createBrowserRouter } = require("react-router-dom");
+import { ErrorView, HomeView } from '@views';
+import { createBrowserRouter } from 'react-router-dom';
 
-const router = createBrowserRouter();
+const ROUTES = [
+  {
+    path: '.',
+    element: <HomeView />,
+    errorElement: <ErrorView />,
+  },
+];
+
+const router = createBrowserRouter(ROUTES);
+
+export default router;
