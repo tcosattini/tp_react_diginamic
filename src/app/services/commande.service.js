@@ -1,7 +1,7 @@
 import Api from './api.service';
 
-class ModelService {
-  #api = Api('model');
+class CommandeService {
+  #api = Api('commande');
 
   fetchAll = () => {
     return this.#api.fetchAll();
@@ -11,12 +11,12 @@ class ModelService {
     return this.#api.fetchOne({ target: id });
   };
 
-  create = (model) => {
-    return this.#api.post({ body: model });
+  create = (CommandeService) => {
+    return this.#api.post({ body: CommandeService });
   };
 
-  update = (model) => {
-    return this.#api.update({ body: model });
+  update = (CommandeService) => {
+    return this.#api.update({ body: CommandeService });
   };
 
   delete = (id) => {
@@ -28,7 +28,7 @@ let instance = null;
 
 const builder = () => {
   if (!instance) {
-    instance = new ModelService();
+    instance = new CommandeService();
   }
 
   return instance;
