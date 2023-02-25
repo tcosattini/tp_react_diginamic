@@ -22,25 +22,10 @@ class Api {
   delete = ({ target, headers }) => {
     return HTTP.delete(`${this.#url}/${target}`, { headers });
   };
+
+  get url() {
+    return this.#url;
+  }
 }
 
-/**
- * This is a registry of Api instances.
- */
-let registry = {};
-
-/**
- * This is a factory function that returns an Api instance.
- * If the instance already exists, it returns it.
- *
- * @param {string} resource
- */
-const register = (resource) => {
-  if (!registry[resource]) {
-    registry = { ...registry, [resource]: new Api(resource) };
-  }
-
-  return registry[resource];
-};
-
-export default register;
+export default Api;

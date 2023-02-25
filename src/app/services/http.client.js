@@ -5,9 +5,9 @@ const HTTP = axios.create({
   baseURL: config.api.url,
 });
 
-HTTP.interceptors.request.use(sendJson);
+HTTP.interceptors.request.use(sendJson, handleError);
 
-HTTP.interceptors.response.use(unwrapResult);
+HTTP.interceptors.response.use(unwrapResult, handleError);
 
 export default HTTP;
 
@@ -23,4 +23,9 @@ function sendJson(request) {
   };
 
   return request;
+}
+
+function handleError(error) {
+  // Add error handling here
+  return Promise.reject(error);
 }

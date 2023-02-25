@@ -1,7 +1,17 @@
 import Api from './api.service';
 
 class ModelService {
-  #api = Api('model');
+  static instance = null;
+
+  #api = new Api('model');
+
+  static builder = () => {
+    if (!ModelService.instance) {
+      ModelService.instance = new ModelService();
+    }
+
+    return ModelService.instance;
+  };
 
   fetchAll = () => {
     return this.#api.fetchAll();
@@ -22,16 +32,10 @@ class ModelService {
   delete = (id) => {
     return this.#api.delete({ target: id });
   };
+
+  get api() {
+    return this.#api;
+  }
 }
 
-let instance = null;
-
-const builder = () => {
-  if (!instance) {
-    instance = new ModelService();
-  }
-
-  return instance;
-};
-
-export default builder;
+export default ModelService.builder;
