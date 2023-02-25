@@ -1,7 +1,17 @@
 import Api from './api.service';
 
 class CommandeService {
-  #api = Api('commande');
+  static instance = null;
+
+  #api = new Api('commande');
+
+  static builder = () => {
+    if (!CommandeService.instance) {
+      CommandeService.instance = new CommandeService();
+    }
+
+    return CommandeService.instance;
+  };
 
   fetchAll = () => {
     return this.#api.fetchAll();
@@ -11,12 +21,12 @@ class CommandeService {
     return this.#api.fetchOne({ target: id });
   };
 
-  create = (CommandeService) => {
-    return this.#api.post({ body: CommandeService });
+  create = (commande) => {
+    return this.#api.post({ body: commande });
   };
 
-  update = (CommandeService) => {
-    return this.#api.update({ body: CommandeService });
+  update = (commande) => {
+    return this.#api.update({ body: commande });
   };
 
   delete = (id) => {
@@ -24,14 +34,4 @@ class CommandeService {
   };
 }
 
-let instance = null;
-
-const builder = () => {
-  if (!instance) {
-    instance = new CommandeService();
-  }
-
-  return instance;
-};
-
-export default builder;
+export default CommandeService.builder;

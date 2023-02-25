@@ -1,7 +1,17 @@
 import Api from './api.service';
 
 class ClientService {
-  #api = Api('client');
+  static instance = null;
+
+  #api = new Api('client');
+
+  static builder = () => {
+    if (!ClientService.instance) {
+      ClientService.instance = new ClientService();
+    }
+
+    return ClientService.instance;
+  };
 
   fetchAll = () => {
     return this.#api.fetchAll();
@@ -24,14 +34,4 @@ class ClientService {
   };
 }
 
-let instance = null;
-
-const builder = () => {
-  if (!instance) {
-    instance = new ClientService();
-  }
-
-  return instance;
-};
-
-export default builder;
+export default ClientService.builder;
