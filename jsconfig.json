@@ -5,11 +5,11 @@
       "@/*": ["src/*"],
       "@assets/*": ["src/app/assets/*"],
       "@components/*": ["src/app/components/*"],
-      "@routes/*": ["src/app/routes/*"],
-      "@views/*": ["src/app/views/*"],
-      "@services/*": ["src/app/services/*"],
+      "@config/*": ["src/app/config/*"],
       "@models/*": ["src/app/models/*"],
-      "@config/*": ["src/app/config/*"]
+      "@routes/*": ["src/app/routes/*"],
+      "@services/*": ["src/app/services/*"],
+      "@views/*": ["src/app/views/*"]
     }
   }
 }
