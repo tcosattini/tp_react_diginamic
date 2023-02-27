@@ -1,5 +1,5 @@
-import { ErrorView, HomeView } from '@views';
 import { createBrowserRouter } from 'react-router-dom';
+import { ErrorView, HomeView } from '../views';
 
 const ROUTES = [
   {

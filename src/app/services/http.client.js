@@ -1,5 +1,5 @@
-import config from '@config';
 import axios from 'axios';
+import config from '../config';
 
 const HTTP = axios.create({
   baseURL: config.api.url,
