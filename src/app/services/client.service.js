@@ -3,7 +3,7 @@ import Api from './api.service';
 class ClientService {
   static instance = null;
 
-  #api = new Api('client');
+  #api = new Api("client");
 
   static builder = () => {
     if (!ClientService.instance) {
@@ -13,8 +13,8 @@ class ClientService {
     return ClientService.instance;
   };
 
-  fetchAll = () => {
-    return this.#api.fetchAll();
+  fetchAll = (page) => {
+    return this.#api.fetchAll({ params: page });
   };
 
   fetchOne = (id) => {

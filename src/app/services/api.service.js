@@ -1,7 +1,7 @@
 import HTTP from './http.client';
 
 class Api {
-  #url = '';
+  #url = "";
 
   constructor(url) {
     this.#url = url;
@@ -13,8 +13,11 @@ class Api {
   fetchOne = ({ target, headers }) => {
     return HTTP.get(`${this.#url}/${target}`, { headers });
   };
-  fetchAll = ({ headers } = {}) => {
-    return HTTP.get(this.#url, { headers });
+  fetchAll = ({ headers, params }) => {
+    return HTTP.get(this.#url, {
+      headers,
+      params: params,
+    });
   };
   update = ({ body, headers }) => {
     return HTTP.put(this.#url, body, { headers });
