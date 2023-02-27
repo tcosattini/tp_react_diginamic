@@ -17,8 +17,9 @@ class CommandeService {
     return this.#api.fetchAll();
   };
 
-  fetchOne = (id) => {
-    return this.#api.fetchOne({ target: id });
+  // path can be 'client' or 'detail' or 'client/detail/other'
+  fetchWithPath = (path, id) => {
+    return this.#api.fetchWithPath({ path, target: id });
   };
 
   create = (commande) => {
@@ -27,10 +28,6 @@ class CommandeService {
 
   update = (commande) => {
     return this.#api.update({ body: commande });
-  };
-
-  delete = (id) => {
-    return this.#api.delete({ target: id });
   };
 
   get api() {
