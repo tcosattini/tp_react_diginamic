@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useList } from "../../../../Hooks/useList";
+import { useState } from 'react';
+import { useList } from '../../../../Hooks/useList';
 
 export const List = () => {
   const { data, getList } = useList(1);

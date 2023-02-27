@@ -1,51 +1,72 @@
+/* unopinionated default CSS rules */
 @import-normalize;
+
+/* Tailwind CSS rules */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
+/** custom CSS Reset (source material from https://www.joshwcomeau.com/css/custom-css-reset/) */
+* {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+
+  /* allow text to wrap on element thinner then their length */
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  /* makes text more readable by spacing it slightly */
+  line-height: calc(1em + 0.5rem);
+}
+
+/* make elements consider padding and border as inner content */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* smooths font rendering on most devices */
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* must be after * selector */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* global styles By Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
-::before, *::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  /* word-break: break-word; */
-  overflow-wrap: break-word;
-  hyphens: auto;
-  line-height: calc(1em + 0.5rem);
-  font-family: Roboto, "Helvetica Neue", "Fira Sans", sans-serif;
-}
-
-html, body, .start, #next {
-  height: 100%;
-}
-
-
-
-img, picture, video, canvas, svg {
+/* makes medias behave as layout elements, instead of text */
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+/* makes text in form keep font consistency */
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-#root, #next {
+#root {
+  width: 100%;
+
+  /* makes modals work */
   isolation: isolate;
 }
