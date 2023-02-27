@@ -17,20 +17,16 @@ class ClientService {
     return this.#api.fetchAll({ params: page });
   };
 
-  fetchOne = (id) => {
-    return this.#api.fetchOne({ target: id });
-  };
-
   create = (client) => {
     return this.#api.post({ body: client });
   };
 
-  update = (client) => {
-    return this.#api.update({ body: client });
+  update = (codcli, client) => {
+    return this.#api.updateAt({ target: codcli, body: client });
   };
 
-  delete = (id) => {
-    return this.#api.delete({ target: id });
+  delete = (codcli) => {
+    return this.#api.delete({ target: codcli });
   };
 
   get api() {

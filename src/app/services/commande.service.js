@@ -17,20 +17,42 @@ class CommandeService {
     return this.#api.fetchAll();
   };
 
-  fetchOne = (id) => {
-    return this.#api.fetchOne({ target: id });
-  };
-
   create = (commande) => {
     return this.#api.post({ body: commande });
   };
 
-  update = (commande) => {
-    return this.#api.update({ body: commande });
+  fetchClient = (codcli) => {
+    return this.#api.fetchAt({ target: `client/${codcli}` });
   };
 
-  delete = (id) => {
-    return this.#api.delete({ target: id });
+  update = (codcde, commande) => {
+    return this.#api.updateAt({
+      target: codcde,
+      body: commande,
+    });
+  };
+
+  delete = (codcde) => {
+    return this.#api.delete({ target: codcde });
+  };
+
+  fetchDetail = (page) => {
+    return this.#api.fetchAll({ params: { page } });
+  };
+
+  createDetail = (detail) => {
+    return this.#api.postAt({ target: 'detail', body: detail });
+  };
+
+  updateDetail = (id_dtl_command, detail) => {
+    return this.#api.updateAt({
+      target: `detail/${id_dtl_command}`,
+      body: detail,
+    });
+  };
+
+  deleteDetail = (id_dtl_command) => {
+    return this.#api.deleteAt({ target: `detail/${id_dtl_command}` });
   };
 
   get api() {
