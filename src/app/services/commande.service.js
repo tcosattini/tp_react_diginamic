@@ -17,17 +17,42 @@ class CommandeService {
     return this.#api.fetchAll();
   };
 
-  // path can be 'client' or 'detail' or 'client/detail/other'
-  fetchWithPath = (path, id) => {
-    return this.#api.fetchWithPath({ path, target: id });
-  };
-
   create = (commande) => {
     return this.#api.post({ body: commande });
   };
 
-  update = (commande) => {
-    return this.#api.update({ body: commande });
+  fetchClient = (codcli) => {
+    return this.#api.fetchAt({ target: `client/${codcli}` });
+  };
+
+  update = (codcde, commande) => {
+    return this.#api.updateAt({
+      target: codcde,
+      body: commande,
+    });
+  };
+
+  delete = (codcde) => {
+    return this.#api.delete({ target: codcde });
+  };
+
+  fetchDetail = (page) => {
+    return this.#api.fetchAll({ params: { page } });
+  };
+
+  createDetail = (detail) => {
+    return this.#api.postAt({ target: 'detail', body: detail });
+  };
+
+  updateDetail = (id_dtl_command, detail) => {
+    return this.#api.updateAt({
+      target: `detail/${id_dtl_command}`,
+      body: detail,
+    });
+  };
+
+  deleteDetail = (id_dtl_command) => {
+    return this.#api.deleteAt({ target: `detail/${id_dtl_command}` });
   };
 
   get api() {
