@@ -4,7 +4,7 @@ class CommandeService {
   /** @type {CommandeService} */
   static instance = null;
 
-  #api = new Api('commande/');
+  #api = new Api('commande');
 
   static builder = () => {
     if (!CommandeService.instance) {
