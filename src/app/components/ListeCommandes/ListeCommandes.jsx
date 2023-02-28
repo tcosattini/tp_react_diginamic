@@ -11,22 +11,25 @@ const ListeCommandes = () => {
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" class="px-6 py-3">
-                Nom du client
+                Code de la commande
               </th>
               <th scope="col" class="px-6 py-3">
-                Adresse
+                Date
               </th>
               <th scope="col" class="px-6 py-3">
-                E-mail
+                Nombre de colis
               </th>
               <th scope="col" class="px-6 py-3">
-                Action
+                Timbre de la commande
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Timbre du client
               </th>
             </tr>
           </thead>
           <tbody>
-            {data.list?.map((client) => (
-              <ListeCommandesElement client={client} />
+            {data.list?.map((commande) => (
+              <ListeCommandesElement commande={commande} />
             ))}
           </tbody>
         </table>

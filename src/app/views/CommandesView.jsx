@@ -1,14 +1,14 @@
 import React from 'react';
 import { ListeCommandes } from '../components';
-import { MainLayout } from '../components/layout';
+import { CommandesLayout } from '../components/layout';
 
 const CommandesView = () => {
   return (
-    <MainLayout>
+    <CommandesLayout>
       <div className="home-view">
       <ListeCommandes />,
       </div>
-    </MainLayout>
+    </CommandesLayout>
   );
 };
 
