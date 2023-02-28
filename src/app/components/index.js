@@ -1,4 +1,4 @@
-import List from "./List/List";
+import ListeClient from "./ListeClient/ListeClient";
 import ListeCommandes from "./ListeCommandes/ListeCommandes";
 
-export { List, ListeCommandes };
+export { ListeClient, ListeCommandes };
