@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { List } from '../components';
 import { MainLayout } from '../components/layout';
 import { ClientService } from '../services';
 
@@ -8,27 +9,16 @@ const HomeView = () => {
 
   return (
     <MainLayout>
-      <div className="home-view">{displayClients(clients)}</div>
+      <div className="home-view">
+        <List clients={clients} />
+      </div>
     </MainLayout>
   );
 };
 
+// This function is used by the useLoaderData hook when accessing the component
 HomeView.loader = () => {
   return ClientService().fetchAll(1);
-};
-
-const displayClients = (clients) => {
-  return clients.map((client) => {
-    return (
-      <div
-        key={client.id}
-        className="client"
-      >
-        <h3>{client.nom}</h3>
-        <p>{client.prenom}</p>
-      </div>
-    );
-  });
 };
 
 export default HomeView;

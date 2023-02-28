@@ -1,9 +1,10 @@
 import Api from './api.service';
 
 class ClientService {
+  /** @type {ClientService} */
   static instance = null;
 
-  #api = new Api("client");
+  #api = new Api('client/');
 
   static builder = () => {
     if (!ClientService.instance) {
@@ -14,7 +15,7 @@ class ClientService {
   };
 
   fetchAll = (page) => {
-    return this.#api.fetchAll({ params: page });
+    return this.#api.fetchAll({ params: { page } });
   };
 
   create = (client) => {

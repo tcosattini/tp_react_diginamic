@@ -1,9 +1,10 @@
 import Api from './api.service';
 
 class CommandeService {
+  /** @type {CommandeService} */
   static instance = null;
 
-  #api = new Api('commande');
+  #api = new Api('commande/');
 
   static builder = () => {
     if (!CommandeService.instance) {
@@ -13,8 +14,8 @@ class CommandeService {
     return CommandeService.instance;
   };
 
-  fetchAll = () => {
-    return this.#api.fetchAll();
+  fetchAll = (page) => {
+    return this.#api.fetchAll({ params: { page } });
   };
 
   create = (commande) => {

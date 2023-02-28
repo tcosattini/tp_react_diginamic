@@ -1,6 +1,7 @@
 import Api from './api.service';
 
 class ModelService {
+  /** @type {ModelService} */
   static instance = null;
 
   #api = new Api('model');
@@ -15,22 +16,6 @@ class ModelService {
 
   fetchAll = () => {
     return this.#api.fetchAll();
-  };
-
-  fetchOne = (id) => {
-    return this.#api.fetchOne({ target: id });
-  };
-
-  create = (model) => {
-    return this.#api.post({ body: model });
-  };
-
-  update = (model) => {
-    return this.#api.update({ body: model });
-  };
-
-  delete = (id) => {
-    return this.#api.delete({ target: id });
   };
 
   get api() {

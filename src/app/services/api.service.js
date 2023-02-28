@@ -1,48 +1,42 @@
-import HTTP from "./http.client";
+import HTTP from './http.client';
 
 class Api {
-  #url = "";
+  #resource = '';
 
   constructor(url) {
-    this.#url = url;
+    this.#resource = url;
   }
 
   fetchAll = ({ params, headers } = {}) => {
-    return HTTP.get(this.#url, { params, headers });
+    return HTTP.get(this.#resource, { params, headers });
   };
 
   post = ({ body, headers }) => {
-    return HTTP.post(this.#url, body, { headers });
+    return HTTP.post(this.#resource, body, { headers });
   };
 
   postAt = ({ target, body, headers }) => {
-    return HTTP.post(`${this.#url}/${target}`, body, { headers });
-  };
-  fetchAll = ({ headers, params }) => {
-    return HTTP.get(this.#url, {
-      headers,
-      params: params,
-    });
+    return HTTP.post(`${this.#resource}/${target}`, body, { headers });
   };
 
   update = ({ body, headers }) => {
-    return HTTP.put(this.#url, body, { headers });
+    return HTTP.put(this.#resource, body, { headers });
   };
 
   updateAt = ({ target, body, headers }) => {
-    return HTTP.put(`${this.#url}/${target}`, body, { headers });
+    return HTTP.put(`${this.#resource}/${target}`, body, { headers });
   };
 
   delete = ({ target, headers }) => {
-    return HTTP.delete(`${this.#url}/${target}`, { headers });
+    return HTTP.delete(`${this.#resource}/${target}`, { headers });
   };
 
   deleteAt = ({ target, headers }) => {
-    return HTTP.delete(`${this.#url}/${target}`, { headers });
+    return HTTP.delete(`${this.#resource}/${target}`, { headers });
   };
 
   get url() {
-    return this.#url;
+    return this.#resource;
   }
 }
 
