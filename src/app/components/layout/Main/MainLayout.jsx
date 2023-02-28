@@ -1,4 +1,5 @@
 import React from 'react';
+import './MainLayout.css';
 
 const MainLayout = ({ children }) => {
   return (
@@ -19,7 +20,14 @@ const buildLayout = (children) => {
 
 const placeTabs = () => {
   return (
-    <nav className="absolute visible w-full main-layout-tabs -top-7">TABS</nav>
+    <nav className="absolute visible left-2 w-fit main-layout-tabs -top-7">
+      <a
+        className="px-5"
+        href="/"
+      >
+        Client
+      </a>
+    </nav>
   );
 };
 
