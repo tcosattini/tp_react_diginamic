@@ -1,8 +1,8 @@
 import React from 'react';
-import { ListeClient } from "../components";
+import { ListeClient } from '../components';
 import { MainLayout } from '../components/layout';
 
-const HomeView = () => {
+const ClientView = () => {
   return (
     <MainLayout>
       <div className="home-view">
@@ -12,4 +12,4 @@ const HomeView = () => {
   );
 };
 
-export default HomeView;
+export default ClientView;

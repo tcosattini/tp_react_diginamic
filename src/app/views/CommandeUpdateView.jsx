@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, useLoaderData } from 'react-router-dom';
 import { MainLayout } from '../components/layout';
+import commandeService from '../services/commande.service';
 
 const CommandeUpdateView = () => {
   const commande = useLoaderData();
@@ -10,17 +11,9 @@ const CommandeUpdateView = () => {
       <Form
         method="post"
         action={CommandeUpdateView.action}
+        className="flex flex-col w-full commande-update-form "
       >
-        <input
-          type="hidden"
-          name="id"
-          value={commande.id}
-        />
-        <input
-          type="text"
-          name="name"
-          defaultValue={commande.name}
-        />
+        {unbox(commande)}
         <button type="submit">Update</button>
       </Form>
     </MainLayout>
@@ -28,11 +21,29 @@ const CommandeUpdateView = () => {
 };
 
 CommandeUpdateView.loader = ({ params }) => {
-  return params.commande;
+  return commandeService().fetchOne(params.commande).then(unwrap);
 };
 
-CommandeUpdateView.action = ({ request }) => {
-  return null;
-};
+function unbox(object) {
+  return Object.entries(object).map(([key, value]) => (
+    <label
+      htmlFor={key}
+      key={key}
+      className="flex"
+    >
+      {key}
+      <input
+        className="ml-5 grow"
+        type="input"
+        name={key}
+        defaultValue={value}
+      />
+    </label>
+  ));
+}
+
+function unwrap(response) {
+  return response.data;
+}
 
 export default CommandeUpdateView;

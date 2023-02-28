@@ -22,6 +22,10 @@ class CommandeService {
     return this.#api.post({ body: commande });
   };
 
+  fetchOne = (codcde) => {
+    return this.#api.fetchAt({ target: codcde });
+  };
+
   fetchClient = (codcli) => {
     return this.#api.fetchAt({ target: `client/${codcli}` });
   };

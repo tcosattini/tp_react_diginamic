@@ -6,7 +6,7 @@ const CommandesView = () => {
   return (
     <CommandesLayout>
       <div className="home-view">
-      <ListeCommandes />,
+        <ListeCommandes />
       </div>
     </CommandesLayout>
   );
