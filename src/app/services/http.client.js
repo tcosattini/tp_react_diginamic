@@ -20,7 +20,7 @@ function handleError(error) {
  * @param {import('axios').AxiosRequestConfig} request
  */
 function sendJson(request) {
-  console.log('request', request);
+  console.log('request', request.url);
 
   request.headers = {
     ...request.headers,

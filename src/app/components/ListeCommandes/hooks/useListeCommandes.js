@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import commandeService from "../../../services/commande.service";
+import { useEffect, useState } from 'react';
+import commandeService from '../../../services/commande.service';
 
 export const useListeCommandes = () => {
   const initialState = { loading: false, error: null, list: null };
@@ -10,7 +10,7 @@ export const useListeCommandes = () => {
     setData(
       { ...data, loading: true },
       commandeService()
-        .fetchClient({ codcli: client })
+        .fetchClient(client)
         .then((response) =>
           setData({ ...data, list: response.response, loading: false })
         )
