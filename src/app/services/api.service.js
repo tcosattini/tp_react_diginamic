@@ -12,7 +12,6 @@ class Api {
   };
 
   fetchAt = ({ target, params, headers } = {}) => {
-    console.log('fetchAt', target, params, headers);
     return HTTP.get(`${this.#resource}/${target}`, { params, headers });
   };
 

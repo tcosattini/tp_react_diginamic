@@ -1,14 +1,14 @@
 import { useRouteError } from 'react-router-dom';
-import { MainLayout } from '../components/layout';
 
 const ErrorView = () => {
   const error = useRouteError();
+
   return (
-    <MainLayout>
+    <div className="flex flex-col items-center justify-center w-full h-full root-layout">
       <h1>Oops!</h1>
       <p>Something went wrong.</p>
       <p>{error.message}</p>
-    </MainLayout>
+    </div>
   );
 };
 

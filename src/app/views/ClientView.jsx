@@ -5,9 +5,7 @@ import { MainLayout } from '../components/layout';
 const ClientView = () => {
   return (
     <MainLayout>
-      <div className="home-view">
-        <ListeClient />
-      </div>
+      <ListeClient />
     </MainLayout>
   );
 };

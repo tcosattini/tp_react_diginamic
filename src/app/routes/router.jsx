@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import RootLayout from '../components/layout/Root/RootLayout';
+import { CommandeUpdateForm } from '../components';
+import { RootLayout } from '../components/layout';
 import {
   ClientView,
   CommandesView,
@@ -22,6 +23,7 @@ const ROUTES = [
           {
             path: ':client',
             element: <CommandesView />,
+            action: CommandeUpdateForm.action,
             children: [
               {
                 path: 'add',
