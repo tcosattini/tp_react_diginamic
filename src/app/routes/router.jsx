@@ -3,7 +3,7 @@ import { ErrorView, HomeView } from '../views';
 
 const ROUTES = [
   {
-    path: '/:page',
+    path: '/',
     element: <HomeView />,
     errorElement: <ErrorView />,
   },

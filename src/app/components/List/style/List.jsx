@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useList } from '../../hooks';
+import { useList } from '../../../Hooks';
 const List = ({ clients }) => {
   const { data, getList } = useList(1);
   const [list, setList] = useState();

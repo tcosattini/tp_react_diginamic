@@ -15,7 +15,7 @@ class ClientService {
   };
 
   fetchAll = (page) => {
-    return this.#api.fetchAll({ params: { page } });
+    return this.#api.fetchAll({ params: page });
   };
 
   create = (client) => {
