@@ -10,7 +10,6 @@ class ClientService {
     if (!ClientService.instance) {
       ClientService.instance = new ClientService();
     }
-
     return ClientService.instance;
   };
 

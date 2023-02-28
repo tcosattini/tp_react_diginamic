@@ -1,15 +1,16 @@
-import { useState, useEffect, createContext } from "react";
-import clientService from "../services/client.service";
+import { useState, useEffect } from "react";
+import clientService from "../../../services/client.service";
 
 export const useList = () => {
   const initialState = { loading: false, error: null, list: null };
   const [data, setData] = useState(initialState);
+  const [selectedPage, setSelectedPage] = useState(1);
 
-  const getList = (page) => {
+  const getList = (selectedPage) => {
     setData(
       { ...data, loading: true },
-      clientService()
-        .fetchAll({ page })
+      clientService(selectedPage)
+        .fetchAll({ page: selectedPage })
         .then((response) =>
           setData({ ...data, list: response, loading: false })
         )
@@ -17,12 +18,13 @@ export const useList = () => {
     );
   };
 
-  useEffect((page) => {
-    getList(page);
-  }, []);
+  useEffect(() => {
+    getList(selectedPage);
+  }, [selectedPage]);
 
   return {
     data,
     getList,
+    selectedPage,
   };
 };
