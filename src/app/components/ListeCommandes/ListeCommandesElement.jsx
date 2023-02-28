@@ -1,5 +1,5 @@
 export const ListeCommandesElement = ({ commande }) => {
-  const { codcde, datcde, trimbrecli, timbrecde, Nbcolis } = commande;
+  const { codcde, datcde, timbrecli, timbrecde, nbcolis } = commande;
   return (
     <>
       <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
@@ -10,9 +10,9 @@ export const ListeCommandesElement = ({ commande }) => {
           {codcde}
         </th>
         <td class="px-6 py-4">{datcde}</td>
-        <td class="px-6 py-4">{Nbcolis}</td>
+        <td class="px-6 py-4">{nbcolis}</td>
         <td class="px-6 py-4">{timbrecde}</td>
-        <td class="px-6 py-4">{trimbrecli}</td>
+        <td class="px-6 py-4">{timbrecli}</td>
         <td class="px-6 py-4">
           <a
             href="#"
