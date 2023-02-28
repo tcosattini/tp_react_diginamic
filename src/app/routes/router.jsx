@@ -1,5 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { ErrorView, HomeView, CommandesView } from '../views';
+import {
+  CommandesView,
+  CommandeUpdateView,
+  ErrorView,
+  HomeView,
+} from '../views';
 
 const ROUTES = [
   {
@@ -9,7 +14,7 @@ const ROUTES = [
   },
   {
     //Liste des commandes d'un client sélectionné
-    path: '/client/:client',
+    path: '/client/:client/',
     element: <CommandesView />,
     // errorElement:
   },
@@ -21,8 +26,9 @@ const ROUTES = [
   },
   {
     //Modification d'une commande
-    path: '/update/:commande',
-    // element:
+    path: '/commande/:commande/update',
+    element: <CommandeUpdateView />,
+    loader: CommandeUpdateView.loader,
     // errorElement:
   },
 ];
