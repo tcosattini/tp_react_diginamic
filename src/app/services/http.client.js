@@ -35,5 +35,5 @@ function sendJson(request) {
  * @param {import('axios').AxiosResponse} response
  */
 function unwrapResult(response) {
-  return response.data.response;
+  return response.data;
 }

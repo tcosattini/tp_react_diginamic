@@ -3,10 +3,9 @@ import { ErrorView, HomeView } from '../views';
 
 const ROUTES = [
   {
-    path: '/',
+    path: '/:page',
     element: <HomeView />,
     errorElement: <ErrorView />,
-    loader: HomeView.loader,
   },
   {
     //Liste des commandes d'un client sélectionné
