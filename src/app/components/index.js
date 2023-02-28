@@ -1,3 +1,3 @@
-import List from "./List/List";
+import ListeClient from "./ListeClient/ListeClient";
 
-export { List };
+export { ListeClient };

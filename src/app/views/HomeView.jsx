@@ -1,12 +1,12 @@
 import React from 'react';
-import { List } from '../components';
+import { ListeClient } from "../components";
 import { MainLayout } from '../components/layout';
 
 const HomeView = () => {
   return (
     <MainLayout>
       <div className="home-view">
-        <List />
+        <ListeClient />
       </div>
     </MainLayout>
   );
