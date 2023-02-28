@@ -12,7 +12,7 @@ export const useList = () => {
       clientService(selectedPage)
         .fetchAll({ page: selectedPage })
         .then((response) =>
-          setData({ ...data, list: response, loading: false })
+          setData({ ...data, list: response.response, loading: false })
         )
         .catch((error) => setData({ loading: false, error: error }))
     );
