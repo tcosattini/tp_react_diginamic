@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { ErrorView, HomeView } from '../views';
+import { ErrorView, HomeView, CommandesView } from '../views';
 
 const ROUTES = [
   {
@@ -9,19 +9,19 @@ const ROUTES = [
   },
   {
     //Liste des commandes d'un client sélectionné
-    path: '/client/{client}',
-    // element:
+    path: '/client/:client',
+    element: <CommandesView />,
     // errorElement:
   },
   {
     //Ajout d'une commande pour le client sélectionné
-    path: '/client/{client}/add',
+    path: '/client/:client/add',
     // element:
     // errorElement:
   },
   {
     //Modification d'une commande
-    path: '/update/{commande}',
+    path: '/update/:commande',
     // element:
     // errorElement:
   },
