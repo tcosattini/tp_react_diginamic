@@ -1,5 +1,6 @@
 export const ListeCommandesElement = ({ commande }) => {
   const { codcde, datcde, timbrecli, timbrecde, nbcolis } = commande;
+  const url = "/commande/"+codcde+"/update"
   return (
     <>
       <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
@@ -15,7 +16,7 @@ export const ListeCommandesElement = ({ commande }) => {
         <td class="px-6 py-4">{timbrecli}</td>
         <td class="px-6 py-4">
           <a
-            href="#"
+            href={url}
             class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           >
             Modifier
