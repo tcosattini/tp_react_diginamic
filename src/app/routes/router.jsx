@@ -48,15 +48,15 @@ const ROUTES = [
               },
             ],
           },
+          {
+            //Modification d'une commande
+            path: 'create',
+            element: <CreateCommandClient />,
+            errorElement: <ErrorView />,
+          },
         ],
       },
     ],
-  },
-  {
-    //Modification d'une commande
-    path: '/CreateCommandClient',
-    element: <CreateCommandClient />,
-    errorElement: <ErrorView />,
   },
 ];
 

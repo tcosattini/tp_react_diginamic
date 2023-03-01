@@ -21,9 +21,7 @@ describe('Test Onglet Client', () => {
   });
 
   afterEach(() => {
-    // cleanup on exiting
-    //unmountComponentAtNode(container);
-    root.unmount();
+
   });
 
   it("Présence du titre de l'onglet", () => {
