@@ -1,13 +1,13 @@
 import React from 'react';
-import { ListeCommandes } from '../components';
+import { ListeClient } from '../components';
 import { MainLayout } from '../components/layout';
 
-const CommandesView = () => {
+const ClientView = () => {
   return (
     <MainLayout>
-      <ListeCommandes />
+      <ListeClient />
     </MainLayout>
   );
 };
 
-export default CommandesView;
+export default ClientView;

@@ -1,4 +1,4 @@
-class Commande {
+class CommandeDto {
   constructor({
     codcde,
     datcde,
@@ -28,14 +28,48 @@ class Commande {
   }
 }
 
-class CommandeDetail {
-  constructor({ codcde, codobj_id, qte, colis, commentaire } = {}) {
+class Commande {
+  constructor({
+    codcde,
+    datcde,
+    codcli_id,
+    timbrecli,
+    timbrecde,
+    nbcolis,
+    cheqcli,
+    idcondit,
+    cdecomt,
+    barchive,
+    bstock,
+    details,
+  } = {}) {
     this.codcde = codcde;
-    this.codobj_id = codobj_id;
-    this.qte = qte;
-    this.colis = colis;
-    this.commentaire = commentaire;
+    this.datcde = datcde;
+    this.codcli_id = codcli_id;
+    this.timbrecli = timbrecli;
+    this.timbrecde = timbrecde;
+    this.nbcolis = nbcolis;
+    this.cheqcli = cheqcli;
+    this.idcondit = idcondit;
+    this.cdecomt = cdecomt;
+    this.barchive = barchive;
+    this.bstock = bstock;
+
+    /** @type {Detail[]} */
+    this.details = details;
   }
 }
 
-export { Commande, CommandeDetail };
+class Detail {
+  constructor({ qte, colis, commentaire, produit, id_dtl_commande } = {}) {
+    this.id_dtl_commande = id_dtl_commande;
+    this.qte = qte;
+    this.colis = colis;
+    this.commentaire = commentaire;
+
+    /** @type {import('./produit.model').default} */
+    this.produit = produit;
+  }
+}
+
+export { Commande, CommandeDto, Detail };

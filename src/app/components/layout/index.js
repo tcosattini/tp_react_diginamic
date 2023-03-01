@@ -1,4 +1,5 @@
-import MainLayout from './Main/MainLayout';
 import CommandesLayout from './Main/CommandesLayout';
+import MainLayout from './Main/MainLayout';
+import RootLayout from './Root/RootLayout';
 
-export { MainLayout, CommandesLayout };
+export { MainLayout, RootLayout, CommandesLayout };

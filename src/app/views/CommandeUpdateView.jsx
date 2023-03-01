@@ -1,38 +1,25 @@
 import React from 'react';
-import { Form, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import { CommandeUpdateForm } from '../components';
 import { MainLayout } from '../components/layout';
+import commandeService from '../services/commande.service';
 
 const CommandeUpdateView = () => {
   const commande = useLoaderData();
 
   return (
     <MainLayout>
-      <Form
-        method="post"
-        action={CommandeUpdateView.action}
-      >
-        <input
-          type="hidden"
-          name="id"
-          value={commande.id}
-        />
-        <input
-          type="text"
-          name="name"
-          defaultValue={commande.name}
-        />
-        <button type="submit">Update</button>
-      </Form>
+      <CommandeUpdateForm commande={commande} />
     </MainLayout>
   );
 };
 
 CommandeUpdateView.loader = ({ params }) => {
-  return params.commande;
+  return commandeService().fetchOne(params.commande).then(unwrap);
 };
 
-CommandeUpdateView.action = ({ request }) => {
-  return null;
-};
+function unwrap(data) {
+  return data.response;
+}
 
 export default CommandeUpdateView;

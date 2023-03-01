@@ -1,13 +1,15 @@
 .main-layout-tabs,
 .main-layout-wrapper {
-  border: 3px solid #000;
+  border-width: 3px;
 }
 
 .main-layout-wrapper {
   border-radius: 10px;
 }
 
-.main-layout-tabs {
+.main-layout-tabs,
+.main-layout-tabs nav,
+.main-layout-tabs nav a {
   border-radius: 10px 10px 0 0;
   border-bottom: none;
 }
