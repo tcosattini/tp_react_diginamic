@@ -2,6 +2,7 @@ export const Paginate = ({ selectedPage, setSelectedPage }) => {
   return (
     <>
       <button
+        id="previous_button"
         onClick={() => setSelectedPage(selectedPage - 1)}
         disabled={selectedPage === 1 ? true : false}
         className="inline-flex items-center px-4 py-2
@@ -12,6 +13,7 @@ export const Paginate = ({ selectedPage, setSelectedPage }) => {
         Précédent
       </button>
       <button
+        id="next_button"
         onClick={() => setSelectedPage(selectedPage + 1)}
         disabled={selectedPage === 10 ? true : false}
         className="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium 
