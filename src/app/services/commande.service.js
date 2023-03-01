@@ -1,5 +1,11 @@
 import Api from './api.service';
 
+
+
+/**
+ * Service singleton class for Commande
+ * @returns {CommandeService} 
+ */
 class CommandeService {
   /** @type {CommandeService} */
   static instance = null;

@@ -1,5 +1,8 @@
 import Api from './api.service';
-
+/**
+ * Service singleton class for Client
+ * @returns {ClientService} 
+ */
 class ClientService {
   /** @type {ClientService} */
   static instance = null;

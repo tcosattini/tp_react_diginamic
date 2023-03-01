@@ -1,12 +1,17 @@
 import HTTP from './http.client';
 
 class Api {
-  #resource = '';
+  #resource = "";
 
   constructor(url) {
     this.#resource = url;
   }
 
+  /**
+   * Fetch all ressources
+   * @param   {{params: params, headers: headers}}
+   * @returns {Response}
+   */
   fetchAll = ({ params, headers } = {}) => {
     return HTTP.get(this.#resource, { params, headers });
   };

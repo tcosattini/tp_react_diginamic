@@ -55,7 +55,6 @@ class Commande {
     this.barchive = barchive;
     this.bstock = bstock;
 
-    /** @type {Detail[]} */
     this.details = details;
   }
 }
@@ -66,8 +65,6 @@ class Detail {
     this.qte = qte;
     this.colis = colis;
     this.commentaire = commentaire;
-
-    /** @type {import('./produit.model').default} */
     this.produit = produit;
   }
 }

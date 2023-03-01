@@ -10,14 +10,20 @@ HTTP.interceptors.request.use(sendJson, handleError);
 HTTP.interceptors.response.use(unwrapResult, handleError);
 
 export default HTTP;
-
+/**
+ * Handle error
+ * @param   {Error}  
+ * @returns {Promise} 
+ */
 function handleError(error) {
   // Add error handling here
   return Promise.reject(error);
 }
 
 /**
- * @param {import('axios').AxiosRequestConfig} request
+ * Add  Content-Type and Accepts headers to the request
+ * @param   {Request}  
+ * @returns {Request} 
  */
 function sendJson(request) {
   request.headers = {
@@ -31,8 +37,8 @@ function sendJson(request) {
 
 /**
  * in seems that django is sending the response in a response key
- *
- * @param {import('axios').AxiosResponse} response
+ * @param   {Response}  
+ * @returns {Response.data} 
  */
 function unwrapResult(response) {
   return response.data;

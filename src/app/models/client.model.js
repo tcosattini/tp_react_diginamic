@@ -1,3 +1,8 @@
+/**
+ * Class Client
+ * @param   {{codcli,genrecli,nomcli,prenomcli,adresse1cli,adresse2cli,adresse3cli,villecli,emailcli,portcli,newsletter,id_commune_id}}
+ * @returns {Client}
+ */
 class Client {
   constructor({
     codcli,

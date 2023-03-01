@@ -1,5 +1,10 @@
 import Api from './api.service';
 
+
+/**
+ * Service singleton class for Produit
+ * @returns {ProduitService} 
+ */
 class ProduitService {
   /** @type {ProduitService} */
   static instance = null;

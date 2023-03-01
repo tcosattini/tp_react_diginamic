@@ -2,11 +2,7 @@ import React from 'react';
 import { Form, redirect } from 'react-router-dom';
 import './CommandeUpdateForm.css';
 
-/**
- *
- * @param {{commande: import('../../models').Commande}} props
- * @returns
- */
+
 const CommandeUpdateForm = ({ commande }) => {
   return (
     <div className="flex flex-col w-full h-full commande-update-form">
@@ -16,9 +12,6 @@ const CommandeUpdateForm = ({ commande }) => {
   );
 };
 
-/**
- * @param {import('react-router-dom').ActionFunctionArgs} request
- */
 CommandeUpdateForm.action = ({ params, request }) => {
   request.formData().then((data) => {
     console.log(data);
@@ -29,9 +22,6 @@ CommandeUpdateForm.action = ({ params, request }) => {
 
 export default CommandeUpdateForm;
 
-/**
- * @param {import('../../models').Commande} commande
- */
 function buildForm(commande) {
   return (
     <Form
@@ -40,29 +30,29 @@ function buildForm(commande) {
       action={`/client/${commande.codcli_id}`}
     >
       {buildInputField(
-        'datcde',
-        'datetime-local',
+        "datcde",
+        "datetime-local",
         commande.datcde,
-        'Date de commande'
+        "Date de commande"
       )}
       {buildInputField(
-        'timbrecli',
-        'text',
+        "timbrecli",
+        "text",
         commande.timbrecli,
-        'Timbre client'
+        "Timbre client"
       )}
       {buildInputField(
-        'timbrecde',
-        'text',
+        "timbrecde",
+        "text",
         commande.timbrecde,
-        'Timbre commande'
+        "Timbre commande"
       )}
-      {buildInputField('nbcolis', 'text', commande.nbcolis, 'Nombre de colis')}
+      {buildInputField("nbcolis", "text", commande.nbcolis, "Nombre de colis")}
       {buildInputField(
-        'cdecomt',
-        'text',
+        "cdecomt",
+        "text",
         commande.cdecomt,
-        'Commande commentaire'
+        "Commande commentaire"
       )}
     </Form>
   );
@@ -74,15 +64,12 @@ function buildForm(commande) {
  * @param {string} type
  * @param {string} property
  * @param {string} label
- * @returns
+ * @returns JSX.element
  */
 function buildInputField(id, type, property, label) {
   return (
     <fieldset className="flex flex-col w-full nbcolis">
-      <label
-        htmlFor={id}
-        className="w-full mt-4 mb-1"
-      >
+      <label htmlFor={id} className="w-full mt-4 mb-1">
         {label}
       </label>
       <input
@@ -106,9 +93,7 @@ function buildSubmitButton(value) {
   );
 }
 
-/**
- * @param {import('../../models').Detail[]} details
- */
+
 function showDetails(details) {
   return (
     <div className="flex flex-wrap items-center justify-center details grow">

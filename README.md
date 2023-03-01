@@ -1,8 +1,26 @@
-Dependencies :
+Install Dependencies with :
 
-Axios
+```
+npm i
+```
 
-React router dom
+Execute Cypress Tests with :
 
-Tailwind CSS
+```
+npx cypress open
+```
 
+Execute unit tests with :
+
+```
+npm test
+```
+
+
+Documentation can be found on : /docs
+
+Regenerate with
+
+```
+npm run docs
+```
