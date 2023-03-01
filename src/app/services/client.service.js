@@ -4,13 +4,12 @@ class ClientService {
   /** @type {ClientService} */
   static instance = null;
 
-  #api = new Api('client/');
+  #api = new Api('client');
 
   static builder = () => {
     if (!ClientService.instance) {
       ClientService.instance = new ClientService();
     }
-
     return ClientService.instance;
   };
 

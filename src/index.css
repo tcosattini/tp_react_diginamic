@@ -70,3 +70,13 @@ select {
   /* makes modals work */
   isolation: isolate;
 }
+
+/* Pour l'impression d'une commande */
+.print-source {
+  display: none;
+}
+@media print {
+  .print-source {
+    display: block;
+  }
+}

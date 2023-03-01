@@ -1,29 +1,56 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { ErrorView, HomeView, CreateCommandClient } from '../views';
+import { CommandeUpdateForm } from '../components';
+import { RootLayout } from '../components/layout';
+import {
+  ClientView,
+  CommandesView,
+  CommandeUpdateView,
+  ErrorView,
+  CreateCommandClient,
+} from '../views';
 
 const ROUTES = [
   {
     path: '/',
-    element: <HomeView />,
+    element: <RootLayout />,
     errorElement: <ErrorView />,
-  },
-  {
-    //Liste des commandes d'un client sélectionné
-    path: '/client/{client}',
-    // element:
-    // errorElement:
-  },
-  {
-    //Ajout d'une commande pour le client sélectionné
-    path: '/client/{client}/add',
-    // element:
-    // errorElement:
-  },
-  {
-    //Modification d'une commande
-    path: '/update/{commande}',
-    // element:
-    // errorElement:
+    children: [
+      { index: true, element: <ClientView /> },
+      {
+        path: 'client',
+        // errorElement:
+        children: [
+          //Liste des commandes d'un client sélectionné
+          {
+            path: ':client',
+            element: <CommandesView />,
+            action: CommandeUpdateForm.action,
+            children: [
+              {
+                path: 'add',
+                // element:
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: 'commande',
+        children: [
+          {
+            path: ':commande',
+            children: [
+              {
+                //Modification d'une commande
+                path: 'update',
+                element: <CommandeUpdateView />,
+                loader: CommandeUpdateView.loader,
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     //Modification d'une commande

@@ -4,7 +4,7 @@ class CommandeService {
   /** @type {CommandeService} */
   static instance = null;
 
-  #api = new Api('commande/');
+  #api = new Api('commande');
 
   static builder = () => {
     if (!CommandeService.instance) {
@@ -20,6 +20,10 @@ class CommandeService {
 
   create = (commande) => {
     return this.#api.post({ body: commande });
+  };
+
+  fetchOne = (codcde) => {
+    return this.#api.fetchAt({ target: codcde });
   };
 
   fetchClient = (codcli) => {

@@ -1,5 +1,7 @@
-import HomeView from './HomeView';
+import ClientView from './ClientView';
+import CommandesView from './CommandesView';
+import CommandeUpdateView from './CommandeUpdateView';
 import ErrorView from './ErrorView';
 import CreateCommandClient from './CreateCommandClient';
 
-export { HomeView, ErrorView, CreateCommandClient };
+export { ClientView, ErrorView, CommandesView, CommandeUpdateView, CreateCommandClient };

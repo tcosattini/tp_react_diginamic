@@ -1,3 +1,5 @@
-import List from './List/style/List';
+import CommandeUpdateForm from './CommandeUpdateForm/CommandeUpdateForm';
+import ListeClient from './ListeClient/ListeClient';
+import ListeCommandes from './ListeCommandes/ListeCommandes';
 
-export { List };
+export { ListeClient, ListeCommandes, CommandeUpdateForm };

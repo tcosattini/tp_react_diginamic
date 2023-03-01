@@ -11,6 +11,10 @@ class Api {
     return HTTP.get(this.#resource, { params, headers });
   };
 
+  fetchAt = ({ target, params, headers } = {}) => {
+    return HTTP.get(`${this.#resource}/${target}`, { params, headers });
+  };
+
   post = ({ body, headers }) => {
     return HTTP.post(this.#resource, body, { headers });
   };
