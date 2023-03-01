@@ -2,7 +2,7 @@ import { useListeClient } from "./hooks/useListeClient";
 import { ListClientElement } from "./ListClientElement";
 import { Paginate } from "./Paginate";
 
-const ListeClientElement = () => {
+const ListeClient = () => {
   const { data, selectedPage, setSelectedPage } = useListeClient();
 
   return (
@@ -42,4 +42,4 @@ const ListeClientElement = () => {
   );
 };
 
-export default ListeClientElement;
+export default ListeClient;
