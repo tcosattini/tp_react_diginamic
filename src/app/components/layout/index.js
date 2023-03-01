@@ -1,7 +1,5 @@
-import CommandesLayout from './Main/CommandesLayout';
+import FormCreateCommandClient from './CreateCommandClient/FormCreateCommandClient.jsx';
 import MainLayout from './Main/MainLayout';
 import RootLayout from './Root/RootLayout';
-import FormCreateCommandClient from './CreateCommandClient/FormCreateCommandClient.jsx'
 
-export { MainLayout, RootLayout, CommandesLayout, FormCreateCommandClient };
-
+export { MainLayout, RootLayout, FormCreateCommandClient };

@@ -3,9 +3,8 @@ import React from 'react';
 class CommandeImpression extends React.Component {
   render() {
     const commande = this.props.commande;
-    console.log(commande)
     return (
-      <div className='print-source'>
+      <div className="p-10 print-source">
         <h1 style={{ fontSize: 40 }}>Commande</h1>
         <br />
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -58,7 +57,8 @@ class CommandeImpression extends React.Component {
             </tr>
           </tbody>
         </table>
-        <br /><br />
+        <br />
+        <br />
         <h1 style={{ fontSize: 40 }}>Détails de la commande</h1>
         <br />
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -91,12 +91,15 @@ class CommandeImpression extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {commande.details?.map((produit) => (
-              <tr className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                <td className="px-6 py-4">{produit.produit.libobj}</td>
-                <td className="px-6 py-4">{produit.produit.poidsobj}</td>
-                <td className="px-6 py-4">{produit.produit.tailleobj}</td>
-                <td className="px-6 py-4">{produit.produit.points}</td>
+            {commande.details?.map((detail) => (
+              <tr
+                key={detail.id_dtl_commande}
+                className="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+              >
+                <td className="px-6 py-4">{detail.produit.libobj}</td>
+                <td className="px-6 py-4">{detail.produit.poidsobj}</td>
+                <td className="px-6 py-4">{detail.produit.tailleobj}</td>
+                <td className="px-6 py-4">{detail.produit.points}</td>
               </tr>
             ))}
           </tbody>
@@ -104,6 +107,6 @@ class CommandeImpression extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default CommandeImpression;

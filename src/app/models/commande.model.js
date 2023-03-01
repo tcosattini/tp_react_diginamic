@@ -41,6 +41,7 @@ class Commande {
     cdecomt,
     barchive,
     bstock,
+    id_dtl_commande_id,
     details,
   } = {}) {
     this.codcde = codcde;
@@ -54,6 +55,7 @@ class Commande {
     this.cdecomt = cdecomt;
     this.barchive = barchive;
     this.bstock = bstock;
+    this.id_dtl_commande_id = id_dtl_commande_id;
 
     this.details = details;
   }

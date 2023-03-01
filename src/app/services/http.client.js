@@ -41,5 +41,6 @@ function sendJson(request) {
  * @returns {Response.data} 
  */
 function unwrapResult(response) {
+  console.log(response.data.response);
   return response.data;
 }

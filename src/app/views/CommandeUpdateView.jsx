@@ -7,6 +7,8 @@ import commandeService from '../services/commande.service';
 const CommandeUpdateView = () => {
   const commande = useLoaderData();
 
+  console.log(commande);
+
   return (
     <MainLayout>
       <CommandeUpdateForm commande={commande} />

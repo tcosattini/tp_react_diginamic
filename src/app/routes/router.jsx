@@ -5,8 +5,8 @@ import {
   ClientView,
   CommandesView,
   CommandeUpdateView,
-  ErrorView,
   CreateCommandClient,
+  ErrorView,
 } from '../views';
 
 const ROUTES = [
@@ -17,44 +17,19 @@ const ROUTES = [
     children: [
       { index: true, element: <ClientView /> },
       {
-        path: 'client',
-        // errorElement:
-        children: [
-          //Liste des commandes d'un client sélectionné
-          {
-            path: ':client',
-            element: <CommandesView />,
-            action: CommandeUpdateForm.action,
-            children: [
-              {
-                path: 'add',
-                // element:
-              },
-            ],
-          },
-        ],
+        path: 'client/:client',
+        element: <CommandesView />,
+        action: CommandeUpdateForm.action,
       },
       {
-        path: 'commande',
-        children: [
-          {
-            path: ':commande',
-            children: [
-              {
-                //Modification d'une commande
-                path: 'update',
-                element: <CommandeUpdateView />,
-                loader: CommandeUpdateView.loader,
-              },
-            ],
-          },
-          {
-            //Modification d'une commande
-            path: 'create',
-            element: <CreateCommandClient />,
-            errorElement: <ErrorView />,
-          },
-        ],
+        path: 'commande/create',
+        element: <CreateCommandClient />,
+        errorElement: <ErrorView />,
+      },
+      {
+        path: 'commande/:commande/update',
+        element: <CommandeUpdateView />,
+        loader: CommandeUpdateView.loader,
       },
     ],
   },
