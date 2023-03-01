@@ -2,7 +2,6 @@ import React from 'react';
 import { Form, redirect, useNavigate } from 'react-router-dom';
 import { CommandeDto } from '../../models';
 import { CommandeService } from '../../services';
-import './CommandeUpdateForm.css';
 
 const CommandeUpdateForm = ({ commande }) => {
   const navigate = useNavigate();

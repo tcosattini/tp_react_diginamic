@@ -1,5 +1,5 @@
 import CommandeUpdateForm from './CommandeUpdateForm/CommandeUpdateForm';
-import FormCreateCommandClient from './FormCreateCommandClient/FormCreateCommandClient';
+import FormCreateCommandClient from './CreateCommandClient/FormCreateCommandClient';
 import ListeClient from './ListeClient/ListeClient';
 import ListeCommandes from './ListeCommandes/ListeCommandes';
 

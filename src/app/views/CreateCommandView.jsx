@@ -1,5 +1,5 @@
 import React from 'react';
-import FormCreateCommandClient from '../components';
+import { FormCreateCommandClient } from '../components';
 import { MainLayout } from '../layout';
 
 const CreateCommandView = () => {
