@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { CommandeUpdateForm } from '../components';
-import { MainLayout } from '../components/layout';
+import { MainLayout } from '../layout';
 import commandeService from '../services/commande.service';
 
 const CommandeUpdateView = () => {

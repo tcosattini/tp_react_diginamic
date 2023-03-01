@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListeCommandes } from '../components';
-import { MainLayout } from '../components/layout';
+import { MainLayout } from '../layout';
 
 const CommandesView = () => {
   return (

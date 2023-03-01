@@ -26,7 +26,7 @@ const CommandeUpdateForm = ({ commande }) => {
         {buildInput('timbrecde', 'Timbre commande', commande.timbrecde)}
         {buildInput('nbcolis', 'Nombre de colis', commande.nbcolis)}
         {buildTextArea('cdecomt', 'Commande commentaire', commande.cdecomt)}
-        {buildHiddenInput(commande)}
+        {buildHiddenInputs(commande)}
         <div className="flex justify-end w-full m-1 buttons ">
           {buildButton('Modifier', 'mr-3')}
           {buildButton('Annuler', 'mr-1', 'reset', handleCancel)}
@@ -118,7 +118,7 @@ function buildTextArea(property, label, value = '') {
   );
 }
 
-function buildHiddenInput(commande) {
+function buildHiddenInputs(commande) {
   return (
     <>
       {buildInput(

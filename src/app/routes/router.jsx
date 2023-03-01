@@ -1,11 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { CommandeUpdateForm } from '../components';
-import { RootLayout } from '../components/layout';
+import { RootLayout } from '../layout';
 import {
   ClientView,
   CommandesView,
   CommandeUpdateView,
-  CreateCommandClient,
+  CreateCommandView,
   ErrorView,
 } from '../views';
 
@@ -23,7 +23,7 @@ const ROUTES = [
       },
       {
         path: 'commande/create',
-        element: <CreateCommandClient />,
+        element: <CreateCommandView />,
         errorElement: <ErrorView />,
       },
       {

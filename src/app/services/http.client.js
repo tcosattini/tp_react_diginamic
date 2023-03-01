@@ -12,8 +12,8 @@ HTTP.interceptors.response.use(unwrapResult, handleError);
 export default HTTP;
 /**
  * Handle error
- * @param   {Error}  
- * @returns {Promise} 
+ * @param   {Error}
+ * @returns {Promise}
  */
 function handleError(error) {
   // Add error handling here
@@ -22,8 +22,8 @@ function handleError(error) {
 
 /**
  * Add  Content-Type and Accepts headers to the request
- * @param   {Request}  
- * @returns {Request} 
+ * @param   {Request}
+ * @returns {Request}
  */
 function sendJson(request) {
   request.headers = {
@@ -37,10 +37,9 @@ function sendJson(request) {
 
 /**
  * in seems that django is sending the response in a response key
- * @param   {Response}  
- * @returns {Response.data} 
+ * @param   {Response}
+ * @returns {Response.data}
  */
 function unwrapResult(response) {
-  console.log(response.data.response);
   return response.data;
 }
