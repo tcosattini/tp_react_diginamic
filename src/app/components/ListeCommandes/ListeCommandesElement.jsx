@@ -1,7 +1,15 @@
+import React, { useRef } from 'react';
+import ReactToPrint from 'react-to-print';
+
+import CommandeImpression from './CommandeImpression';
+
 export const ListeCommandesElement = ({ commande }) => {
-  const { codcde, datcde, timbrecli, timbrecde, nbcolis } = commande;
+  
+  const { codcde, datcde, timbrecli, timbrecde, nbcolis, details } = commande;
 
   const url = `/commande/${codcde}/update`;
+
+  const componentRef = useRef();
 
   return (
     <>
@@ -23,6 +31,15 @@ export const ListeCommandesElement = ({ commande }) => {
           >
             Modifier
           </a>
+        </td>
+        <td>
+          <div>
+            <ReactToPrint
+              trigger={() => <button>Imprimer</button>}
+              content={() => componentRef.current}
+            />
+            <CommandeImpression commande={commande} ref={componentRef} />
+          </div>
         </td>
       </tr>
     </>

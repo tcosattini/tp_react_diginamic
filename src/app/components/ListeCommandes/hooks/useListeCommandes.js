@@ -14,7 +14,7 @@ export const useListeCommandes = () => {
       commandeService()
         .fetchClient(client)
         .then((response) =>
-          setData({ ...data, list: response.response, loading: false })
+          setData({ ...data, list: response, loading: false })
         )
         .catch((error) => setData({ loading: false, error: error }))
     );
