@@ -1,6 +1,6 @@
 class Produit {
   constructor({
-    codobj,
+    codobj, //id
     libobj,
     tailleobj,
     puobj,
@@ -9,7 +9,7 @@ class Produit {
     o_imp,
     o_aff,
     o_cartp,
-    idcondit,
+    idcondit, // foreign
     points,
     o_ordre_aff,
   } = {}) {

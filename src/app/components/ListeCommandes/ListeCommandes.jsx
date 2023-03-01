@@ -3,7 +3,7 @@ import { ListeCommandesElement } from './ListeCommandesElement';
 
 const ListeCommandes = () => {
   const { data } = useListeCommandes();
-  
+
   return (
     <div className="flex-wrap items-center justify-center w-full h-full list">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -40,22 +40,14 @@ const ListeCommandes = () => {
               >
                 Timbre du client
               </th>
-              <th
-                scope="col"
-                className="px-6 py-3"
-              >
-                Action
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3"
-              >
-              </th>
             </tr>
           </thead>
           <tbody>
             {data.list?.response?.map((commande) => (
-              <ListeCommandesElement commande={commande} />
+              <ListeCommandesElement
+                key={commande.codcde}
+                commande={commande}
+              />
             ))}
           </tbody>
         </table>

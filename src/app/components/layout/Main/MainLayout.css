@@ -7,9 +7,6 @@
   border-radius: 10px;
 }
 
-.main-layout-tabs,
-.main-layout-tabs nav,
-.main-layout-tabs nav a {
+.main-layout-tabs {
   border-radius: 10px 10px 0 0;
-  border-bottom: none;
 }
