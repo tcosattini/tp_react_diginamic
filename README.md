@@ -4,6 +4,12 @@ Install Dependencies with :
 npm i
 ```
 
+Run local server with :
+
+```
+npm start
+```
+
 Execute Cypress Tests with :
 
 ```
@@ -15,7 +21,6 @@ Execute unit tests with :
 ```
 npm test
 ```
-
 
 Documentation can be found on : /docs
 
